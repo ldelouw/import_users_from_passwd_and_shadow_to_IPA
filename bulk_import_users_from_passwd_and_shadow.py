@@ -73,4 +73,4 @@ for e in entries:
 	homedir=unicode(e.pw_dir,"utf-8")
 	shell=unicode(e.pw_shell,"utf-8")
 
-	result=api.Command['user_add'](uid,givenname=givenname,sn=sn,uidnumber=e.pw_uid,gidnumber=e.pw_gid,homedirectory=homedir,addattr=u'userPassword={crypt}%s' % passhash)
+	result=api.Command['user_add'](uid,givenname=givenname,sn=sn,uidnumber=e.pw_uid,gidnumber=e.pw_gid,loginshell=shell,homedirectory=homedir,addattr=u'userPassword={crypt}%s' % passhash)
